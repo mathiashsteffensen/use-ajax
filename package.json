@@ -1,9 +1,23 @@
 {
-  "name": "use-ajax",
+  "name": "@mhsteffensen/use-ajax",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
     "react": "^17.0.2"
-  }
+  },
+  "description": "",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mathiashsteffensen/use-ajax.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/mathiashsteffensen/use-ajax/issues"
+  },
+  "homepage": "https://github.com/mathiashsteffensen/use-ajax#readme"
 }
