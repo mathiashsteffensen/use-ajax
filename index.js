@@ -22,7 +22,7 @@ import { useState, useEffect } from 'react';
 // data = is either undefined or the data returned from the asynchronous function
 // error = is undefined unless an error occurred
 
-export default function useAJAX(ajaxFunction, args, { timeOut = 0, runOnce = false } = { timeOut: 0, runOnce: false }) {
+function useAJAX(ajaxFunction, args, { timeOut = 0, runOnce = false } = { timeOut: 0, runOnce: false }) {
     const [loading, setLoading] = useState(false);
 
     const [data, setData] = useState(undefined);
@@ -47,4 +47,9 @@ export default function useAJAX(ajaxFunction, args, { timeOut = 0, runOnce = fal
     }, runOnce ? [] : args);
 
     return { loading, data, error };
+}
+
+export default useAJAX
+export {
+    useAJAX
 }

@@ -1,3 +1,5 @@
+declare module "@mhsteffensen/use-ajax";
+
 type AjaxFunction = () => Promise<any>
 
 type Options = { timeout?: number, runOnce?: boolean }
