@@ -27,3 +27,41 @@ Name/Key | Description
 loading | boolean, indicating whether the asynchronous function is still pending
 data | is either undefined or the data returned from the asynchronous function
 error | is undefined unless an error occurred
+
+
+## EXAMPLE
+This is an example from a weather app that runs an async function to fetch the weather from an API, it is written in TypeScript, so if you're using JavaScript you can ignore the type annotations.
+
+the AJAX function looks as follows:
+```typescript
+export const getWeather = async (lat: number, lon: number): Promise<WeatherData> => {
+    const response = await fetch(`${baseURI}weather?latitude=${lat}&longitude=${lon}`)
+    return await response.json()
+}
+```
+
+It takes 2 arguments and returns a Promise.
+
+Then in your React function component
+
+```typescript
+    const { data, error, loading }: { data: WeatherData, error: undefined | any, loading: boolean } = useAJAX(getWeather, [55, 12])
+
+    if (error) {
+        return <h1>
+            An error occurred
+        </h1>
+    }
+    
+    if (loading && !data) {
+        return <h1>
+            Loading...
+        </h1>
+    }
+    
+    if (data) {
+        return <h1>
+            Temperature is { data.main.temp }
+        </h1>
+    }
+```
