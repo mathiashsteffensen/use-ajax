@@ -1,6 +1,18 @@
 # useAJAX React hook
 A hook for running an async function in React.
 
+You can install the package from NPM by running one of the following shell commands in your project directory:
+```shell
+npm i @mhsteffensen/use-ajax
+yarn add @mhsteffensen/use-ajax
+pnpm add @mhsteffensen/use-ajax
+```
+
+And import it in yout React components like so:
+```typescript
+import useAJAX from "@mhsteffensen/use-ajax"
+```
+
 The primary use case is for running network requests, but it can be used for any asynchronous operation passed as the first argument as described below.
 
 For more complex use cases a hook like [useSWR](https://github.com/vercel/swr) is recommended.
